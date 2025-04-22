@@ -1,20 +1,12 @@
 {
   "posts": [
     {
-      "id": "vD9BvXvgdwbxeIQ-virxJ",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMekuXqi04MTx2Vr-TOHaFrZspTeljnzy09g&s",
-      "name": "aman",
-      "std": "1",
+      "id": "HFpu4odwniV-_i3s1WOr4",
+      "url": "https://www.matcharesident.com/assets/new_main/img01-8189493192488efc39770a7f67a1a1a2c2ec4b63d0daf7fced0f9919822e64b0.png",
+      "name": "aman sanvat",
+      "std": "12",
       "email": "vinyceco@socam.me",
-      "password": "1111"
-    },
-    {
-      "id": "ZA2vGBfPWnmdDHAfeJ1F-",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMekuXqi04MTx2Vr-TOHaFrZspTeljnzy09g&s",
-      "name": "amana sanvat",
-      "std": "23",
-      "email": "lulu@gmail.com",
-      "password": "232323"
+      "password": "123"
     }
   ]
 }

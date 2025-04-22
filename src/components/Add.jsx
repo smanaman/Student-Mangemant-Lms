@@ -35,7 +35,7 @@ function Add() {
       email: '',
       password: '',
     });
-    navigate('/view'); 
+    navigate('/view', {state : "Add"}); 
   };
 
   const handleChange = (e) => {

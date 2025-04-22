@@ -33,7 +33,7 @@ export const DeleteData=createAsyncThunk("StudentLmsData/DeleteData",async(data)
 })
 
 const initialState = {
-    StudentData: [],
+  StudentLmsData: [],
 }
  const StudentLms=createSlice({
 name:"StudentLmsData",
@@ -47,10 +47,11 @@ extraReducers:(builder)=>{
         state.StudentLmsData=action.payload
       })
       builder.addCase(EditData.fulfilled,(state,action)=>{
-        state.StudentLmsData=action.payload
+        const index=state.StudentLmsData.find((it)=>it.id===action.payload.id)
+        state.StudentLmsData[index]=action.payload
       })
       builder.addCase(DeleteData.fulfilled,(state,action)=>{
-        state.StudentLmsData=action.payload
+        state.StudentLmsData = state.StudentLmsData.filter((it) => it.id !==action.payload.id)
       })
 
 }

@@ -6,6 +6,8 @@ import { EditData } from '../feature/Creteslice';
 
 function Edit() {
   const location = useLocation();
+  console.log(location);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,13 +22,14 @@ function Edit() {
   useEffect(() => {
     if (location.state) {
       setInput(location.state);
+      
     }
   }, [location.state]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(EditData(input));
-    navigate('/view');
+    navigate('/view', {state : "Edit"});
   };
 
   const handleChange = (e) => {
