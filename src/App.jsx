@@ -17,10 +17,10 @@ function App() {
 <BrowserRouter>
  <Routes>
   {/* <Route path="/" element={<Add/>} /> */}
-  <Route path="/" element={<Add/>} />
+  <Route path="/" element={<Singin/>} />
+  <Route path="/add" element={<Add/>} />
   <Route path="/view" element={<View/>} />
   <Route path="/edit" element={<Edit/>} />
-  <Route path="/singin" element={<Singin/>} />
   <Route path="/login" element={<Login/>} />
 
  </Routes>

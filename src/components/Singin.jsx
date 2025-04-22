@@ -26,7 +26,7 @@ function Singin() {
             e.preventDefault()
             await axios.post('http://localhost:3000/users',input)
 
-            navigator('/')
+            navigator('/login')
         }
     return (
         <div>
