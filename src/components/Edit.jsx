@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import './Add.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { EditData } from '../feature/Creteslice';
+import { nanoid } from '@reduxjs/toolkit';
 
 function Edit() {
   const location = useLocation();
@@ -12,9 +13,10 @@ function Edit() {
   const dispatch = useDispatch();
 
   const [input, setInput] = useState({
-    id: '',
+    id: nanoid(),
     url: '',
     name: '',
+    std: '',
     email: '',
     password: '',
   });
@@ -29,6 +31,14 @@ function Edit() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(EditData(input));
+    setInput({
+      id: nanoid(),
+      url: '',
+      name: '',
+      std: '',
+      email: '',
+      password: '',
+    });
     navigate('/view', {state : "Edit"});
   };
 
@@ -41,7 +51,8 @@ function Edit() {
   };
 
   return (
-    <div className="form-container">
+   <div className="bodydiv">
+     <div className="form-container">
       <h2>Edit</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -97,6 +108,7 @@ function Edit() {
         </button>
       </form>
     </div>
+   </div>
   );
 }
 

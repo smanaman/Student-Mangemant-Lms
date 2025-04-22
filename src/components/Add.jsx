@@ -47,7 +47,8 @@ function Add() {
   };
 
   return (
-    <div className="form-container">
+   <div className="bodydiv">
+     <div className="form-container">
       <h2>Add Student Data</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -115,6 +116,7 @@ function Add() {
         </button>
       </form>
     </div>
+   </div>
   );
 }
 

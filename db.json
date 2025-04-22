@@ -3,10 +3,32 @@
     {
       "id": "HFpu4odwniV-_i3s1WOr4",
       "url": "https://www.matcharesident.com/assets/new_main/img01-8189493192488efc39770a7f67a1a1a2c2ec4b63d0daf7fced0f9919822e64b0.png",
-      "name": "aman sanvat",
+      "name": "aman ",
       "std": "12",
       "email": "vinyceco@socam.me",
+      "password": "1231"
+    },
+    {
+      "id": "5iLerBOgJeFPGnevZ7qen",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMekuXqi04MTx2Vr-TOHaFrZspTeljnzy09g&s",
+      "name": "s",
+      "std": "12",
+      "email": "asa12@gamil.com",
+      "password": "12"
+    }
+  ],
+  "users": [
+    {
+      "id": "ce69",
+      "fullname": "aman",
+      "email": "lulu@gmail.com",
+      "username": "firozsavant170@gmail.com",
       "password": "123"
     }
+  ],
+  "login": [
+    
   ]
+
+
 }
