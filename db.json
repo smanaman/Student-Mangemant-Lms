@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": "vD9BvXvgdwbxeIQ-virxJ",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMekuXqi04MTx2Vr-TOHaFrZspTeljnzy09g&s",
+      "name": "aman",
+      "std": "1",
+      "email": "vinyceco@socam.me",
+      "password": "1111"
+    },
+    {
+      "id": "ZA2vGBfPWnmdDHAfeJ1F-",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMekuXqi04MTx2Vr-TOHaFrZspTeljnzy09g&s",
+      "name": "amana sanvat",
+      "std": "23",
+      "email": "lulu@gmail.com",
+      "password": "232323"
+    }
+  ]
+}
