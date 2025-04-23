@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { DeleteData, FeactData } from '../feature/Creteslice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-
-
 import './view.css'
 import axios from 'axios';
 import Nav from './Nav';
@@ -61,8 +59,8 @@ setfilterdata(filterlmsdata)
           },[navigate])
   return (
     <div>
-      
       <Nav/>
+      
       <button className='AddButton' onClick={()=>navigate('/add')}>Add New<i class="fa-solid fa-plus"></i></button>
       <div className="button-row">
   <button   onClick={()=>filterdata1(1)}>1</button>

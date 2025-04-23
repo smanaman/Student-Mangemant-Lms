@@ -5,6 +5,7 @@ import './Add.css';
 import { nanoid } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Nav from './Nav';
 function Add() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -66,6 +67,8 @@ function Add() {
     },[navigate])
 
   return (
+    <div>
+      <Nav/>
    <div className="bodydiv">
      <div className="form-container">
       <h2>Add Student Data</h2>
@@ -135,6 +138,7 @@ function Add() {
         </button>
       </form>
     </div>
+   </div>
    </div>
   );
 }

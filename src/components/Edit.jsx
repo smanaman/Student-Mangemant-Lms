@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { EditData } from '../feature/Creteslice';
 import { nanoid } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Nav from './Nav';
 
 function Edit() {
   const location = useLocation();
@@ -71,7 +72,11 @@ function Edit() {
   },[navigate])
 
   return (
-   <div className="bodydiv">
+    <div>
+      <Nav/>
+       <div className="bodydiv">
+  
+
      <div className="form-container">
       <h2>Edit</h2>
       <form onSubmit={handleSubmit}>
@@ -128,6 +133,7 @@ function Edit() {
         </button>
       </form>
     </div>
+   </div>
    </div>
   );
 }
