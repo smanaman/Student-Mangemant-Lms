@@ -4,6 +4,7 @@ import { FeactData, AddData } from '../feature/Creteslice'; // Ensure AddData is
 import './Add.css';
 import { nanoid } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 function Add() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -45,6 +46,24 @@ function Add() {
       [name]: value,
     }));
   };
+    const checkLogin = async () => {
+      try {
+        const res = await axios.get('http://localhost:3000/login');
+    console.log(res.data);
+    if (res.data.length === 0) {
+      nav('/login');
+    } else {
+      navigate('/add');
+    }
+      } catch (error) {
+        console.error('Error checking login:', error);
+        navigate('/login'); 
+      }
+    };
+    useEffect(()=>{
+      checkLogin();
+    
+    },[navigate])
 
   return (
    <div className="bodydiv">

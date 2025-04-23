@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import './view.css'
+import axios from 'axios';
 function View() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -20,11 +21,16 @@ const [filterdata,setfilterdata]=useState([])
     dispatch(FeactData())
   }, [location])
 
-  const handleDelete = (id) => {
-    dispatch(DeleteData(id))
-    // dispatch(FeactData())
-    // FeactData()
-  }
+  const handleDelete = async (id) => {
+    await dispatch(DeleteData(id));
+    dispatch(FeactData());
+  
+    if (filterdata.length > 0) {
+      const filterclass = filterdata[0]?.std;
+      filterdata1(filterclass);
+    }
+  };
+  
   const filterdata1=(filterclass)=>{
 
     const filterlmsdata=StudentLmsData.filter((val)=>val.std == filterclass)
@@ -33,9 +39,27 @@ console.log(filterdata);
 setfilterdata(filterlmsdata)
   }
 
-
+   const checkLogin = async () => {
+            try {
+              const res = await axios.get('http://localhost:3000/login');
+          console.log(res.data);
+          if (res.data.length === 0) {
+            navigate('/login');
+          } else {
+            navigate('/view');
+          }
+            } catch (error) {
+              console.error('Error checking login:', error);
+              navigate('/login'); 
+            }
+          };
+          useEffect(()=>{
+            checkLogin();
+          
+          },[navigate])
   return (
     <div>
+      <button className='AddButton' onClick={()=>navigate('/add')}>Add New<i class="fa-solid fa-plus"></i></button>
       <div className="button-row">
   <button   onClick={()=>filterdata1(1)}>1</button>
   <button   onClick={()=>filterdata1(2)}>2</button>

@@ -1,20 +1,12 @@
 {
   "posts": [
     {
-      "id": "3fGTdBMDvawAU2pjpty1m",
+      "id": "9Pgf8E2_0LGcbeCz0mG2e",
       "url": "https://www.matcharesident.com/assets/new_main/img01-8189493192488efc39770a7f67a1a1a2c2ec4b63d0daf7fced0f9919822e64b0.png",
-      "name": "1qwesdf",
+      "name": "ddd",
       "std": "1",
-      "email": "asa12@gamil.com",
+      "email": "lulu@gmail.com",
       "password": "11111"
-    },
-    {
-      "id": "QeNmAsELUzbf8VaJshF4Y",
-      "url": "https://www.matcharesident.com/assets/new_main/img01-8189493192488efc39770a7f67a1a1a2c2ec4b63d0daf7fced0f9919822e64b0.png",
-      "name": "s",
-      "std": "6",
-      "email": "asa12@gamil.com",
-      "password": "123"
     }
   ],
   "users": [
@@ -28,7 +20,7 @@
   ],
   "login": [
     {
-      "id": 46,
+      "id": 69,
       "username": "lulu@gmail.com",
       "password": "123"
     }

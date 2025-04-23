@@ -21,3 +21,17 @@
   .button-row button:hover {
     background-color: #2980b9;
   }
+  .AddButton{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+    background-color: red;
+    border: none;
+  }
+  .AddButton i{
+    margin-left: 10px;
+  }

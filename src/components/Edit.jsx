@@ -4,6 +4,7 @@ import './Add.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { EditData } from '../feature/Creteslice';
 import { nanoid } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 function Edit() {
   const location = useLocation();
@@ -49,6 +50,25 @@ function Edit() {
       [name]: value,
     }));
   };
+  
+  const checkLogin = async () => {
+    try {
+      const res = await axios.get('http://localhost:3000/login');
+  console.log(res.data);
+  if (res.data.length === 0) {
+    nav('/login');
+  } else {
+    navigate('/edit');
+  }
+    } catch (error) {
+      console.error('Error checking login:', error);
+      navigate('/login'); 
+    }
+  };
+  useEffect(()=>{
+    checkLogin();
+  
+  },[navigate])
 
   return (
    <div className="bodydiv">
