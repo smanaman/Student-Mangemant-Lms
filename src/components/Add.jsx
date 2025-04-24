@@ -52,7 +52,7 @@ function Add() {
         const res = await axios.get('http://localhost:3000/login');
     console.log(res.data);
     if (res.data.length === 0) {
-      nav('/login');
+      navigate('/login');
     } else {
       navigate('/add');
     }

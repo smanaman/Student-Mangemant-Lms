@@ -3,10 +3,18 @@
     {
       "id": "9Pgf8E2_0LGcbeCz0mG2e",
       "url": "https://www.matcharesident.com/assets/new_main/img01-8189493192488efc39770a7f67a1a1a2c2ec4b63d0daf7fced0f9919822e64b0.png",
-      "name": "ddd",
+      "name": "dddlite",
       "std": "1",
       "email": "lulu@gmail.com",
       "password": "11111"
+    },
+    {
+      "id": "h2pf2dt5tQieVprKx41pA",
+      "url": "https://www.matcharesident.com/assets/new_main/img01-8189493192488efc39770a7f67a1a1a2c2ec4b63d0daf7fced0f9919822e64b0.png",
+      "name": "aman",
+      "std": "12",
+      "email": "vinyceco@socam.me",
+      "password": "111111"
     }
   ],
   "users": [
@@ -20,7 +28,7 @@
   ],
   "login": [
     {
-      "id": 69,
+      "id": "69",
       "username": "lulu@gmail.com",
       "password": "123"
     }
