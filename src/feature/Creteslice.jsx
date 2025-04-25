@@ -5,7 +5,7 @@ import axios from "axios"
 export const FeactData=createAsyncThunk("StudentLmsData/FeactData",async()=>{
     const response=await axios.get("http://localhost:3000/posts")
     
-    console.log(response.data);
+    // console.log(response.data);
     
     return response.data
 })
@@ -13,21 +13,21 @@ export const FeactData=createAsyncThunk("StudentLmsData/FeactData",async()=>{
 export const AddData=createAsyncThunk("StudentLmsData/AddData",async(data)=>{
     const response=await axios.post("http://localhost:3000/posts",data)
     
-    console.log(response.data);
+    // console.log(response.data);
     
     return response.data
 })
 export const EditData=createAsyncThunk("StudentLmsData/EditData",async(data)=>{
     const response=await axios.put(`http://localhost:3000/posts/${data.id}`,data)
     
-    console.log(response.data);
+    // console.log(response.data);
     
     // return response.data
 })
 export const DeleteData=createAsyncThunk("StudentLmsData/DeleteData",async(data)=>{
     const response=await axios.delete(`http://localhost:3000/posts/${data}`)
     
-    console.log(response.data);
+    // console.log(response.data);
     
     return response.data
 })

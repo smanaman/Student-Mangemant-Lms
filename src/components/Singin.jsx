@@ -3,6 +3,8 @@ import { useState } from 'react'
 import './singin.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+
 function Singin() {
 
     const navigator=useNavigate()
@@ -27,6 +29,11 @@ function Singin() {
             await axios.post('http://localhost:3000/users',input)
 
             navigator('/login')
+            Swal.fire({
+                title: "singin success!",
+                icon: "success",
+                draggable: true
+              });
         }
     return (
         <div>

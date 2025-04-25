@@ -3,18 +3,18 @@
     {
       "id": "9Pgf8E2_0LGcbeCz0mG2e",
       "url": "https://www.matcharesident.com/assets/new_main/img01-8189493192488efc39770a7f67a1a1a2c2ec4b63d0daf7fced0f9919822e64b0.png",
-      "name": "dddlite",
-      "std": "1",
+      "name": "dlite",
+      "std": "10",
       "email": "lulu@gmail.com",
       "password": "11111"
     },
     {
-      "id": "h2pf2dt5tQieVprKx41pA",
-      "url": "https://www.matcharesident.com/assets/new_main/img01-8189493192488efc39770a7f67a1a1a2c2ec4b63d0daf7fced0f9919822e64b0.png",
-      "name": "aman",
-      "std": "12",
+      "id": "FC528VvXxgETLqwvrCx_f",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMekuXqi04MTx2Vr-TOHaFrZspTeljnzy09g&s",
+      "name": "s",
+      "std": "2",
       "email": "vinyceco@socam.me",
-      "password": "111111"
+      "password": "1234567890"
     }
   ],
   "users": [
@@ -24,11 +24,23 @@
       "email": "lulu@gmail.com",
       "username": "firozsavant170@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "eafa",
+      "fullname": "aman",
+      "email": "vinyceco@socam.me",
+      "username": "firozsavant170@gmail.com",
+      "password": "12345"
     }
   ],
   "login": [
     {
       "id": "69",
+      "username": "lulu@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": 67,
       "username": "lulu@gmail.com",
       "password": "123"
     }

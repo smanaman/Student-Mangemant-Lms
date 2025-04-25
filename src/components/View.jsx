@@ -5,18 +5,20 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './view.css'
 import axios from 'axios';
 import Nav from './Nav';
+import Swal from 'sweetalert2'
+
 function View() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const location = useLocation()
 
 
-const [filterdata,setfilterdata]=useState([])
+  const [filterdata, setfilterdata] = useState([])
   const { StudentLmsData } = useSelector((state) => state.StudentLmsData)
-  console.log(StudentLmsData);
-  
+  // console.log(StudentLmsData);
 
-  console.log(location);
+
+  // console.log(location);
   useEffect(() => {
     dispatch(FeactData())
   }, [location])
@@ -24,70 +26,75 @@ const [filterdata,setfilterdata]=useState([])
   const handleDelete = async (id) => {
     await dispatch(DeleteData(id));
     dispatch(FeactData());
-  
+
     if (filterdata.length > 0) {
       const filterclass = filterdata[0]?.std;
       filterdata1(filterclass);
     }
+      Swal.fire({
+          title: "Delet success!",
+          icon: "success",
+          draggable: true
+        });
   };
-  
-  const filterdata1=(filterclass)=>{
 
-    const filterlmsdata=StudentLmsData.filter((val)=>val.std == filterclass)
-console.log(filterdata);
+  const filterdata1 = (filterclass) => {
 
-setfilterdata(filterlmsdata)
+    const filterlmsdata = StudentLmsData.filter((val) => val.std == filterclass)
+    // console.log(filterdata);
+
+    setfilterdata(filterlmsdata)
   }
 
-   const checkLogin = async () => {
-            try {
-              const res = await axios.get('http://localhost:3000/login');
-          console.log(res.data);
-          if (res.data.length === 0) {
-            navigate('/login');
-          } else {
-            navigate('/view');
-          }
-            } catch (error) {
-              console.error('Error checking login:', error);
-              navigate('/login'); 
-            }
-          };
-          useEffect(()=>{
-            checkLogin();
-          
-          },[navigate])
+  const checkLogin = async () => {
+    try {
+      const res = await axios.get('http://localhost:3000/login');
+      // console.log(res.data);
+      if (res.data.length === 0) {
+        navigate('/login');
+      } else {
+        navigate('/view');
+      }
+    } catch (error) {
+      console.error('Error checking login:', error);
+      navigate('/login');
+    }
+  };
+  useEffect(() => {
+    checkLogin();
+
+  }, [navigate])
   return (
     <div>
-      <Nav/>
-      
-      <button className='AddButton' onClick={()=>navigate('/add')}>Add New<i class="fa-solid fa-plus"></i></button>
+      <Nav />
+
+      <button className='AddButton' onClick={() => navigate('/add')}>Add New<i class="fa-solid fa-plus"></i></button>
       <div className="button-row">
-  <button   onClick={()=>filterdata1(1)}>1</button>
-  <button   onClick={()=>filterdata1(2)}>2</button>
-  <button   onClick={()=>filterdata1(3)}>3</button>
-  <button   onClick={()=>filterdata1(4)}>4</button>
-  <button   onClick={()=>filterdata1(5)}>5</button>
-  <button   onClick={()=>filterdata1(6)}>6</button>
-  <button   onClick={()=>filterdata1(7)}>7</button>
-  <button   onClick={()=>filterdata1(8)}>8</button>
-  <button   onClick={()=>filterdata1(9)}>9</button>
-  <button   onClick={()=>filterdata1(10)}>10</button>
-  <button   onClick={()=>filterdata1(11)}>11</button>
-  <button  onClick={()=>filterdata1(12)}>12</button>
-</div>
+        <button onClick={() => filterdata1(1)}>1</button>
+        <button onClick={() => filterdata1(2)}>2</button>
+        <button onClick={() => filterdata1(3)}>3</button>
+        <button onClick={() => filterdata1(4)}>4</button>
+        <button onClick={() => filterdata1(5)}>5</button>
+        <button onClick={() => filterdata1(6)}>6</button>
+        <button onClick={() => filterdata1(7)}>7</button>
+        <button onClick={() => filterdata1(8)}>8</button>
+        <button onClick={() => filterdata1(9)}>9</button>
+        <button onClick={() => filterdata1(10)}>10</button>
+        <button onClick={() => filterdata1(11)}>11</button>
+        <button onClick={() => filterdata1(12)}>12</button>
+      </div>
 
       <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gap: '20px' }}>
 
-          
-          
+
+
           {(Array.isArray(filterdata) && filterdata.length > 0
-  ? filterdata
-  : Array.isArray(StudentLmsData)
-    ? StudentLmsData
-    : []
-).map((val, index) => (
+            ? filterdata
+            : Array.isArray(StudentLmsData)
+              ? StudentLmsData
+              : []
+          ).map((val, index) => (
 
             <div
               key={index}
@@ -131,7 +138,7 @@ setfilterdata(filterlmsdata)
                   <div style={{ color: '#666', fontSize: '24px' }}>🌐</div>
                 )}
               </div>
-          
+
               {/* Text Content */}
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
@@ -153,7 +160,7 @@ setfilterdata(filterlmsdata)
                     </span>
                   )}
                 </div>
-          
+
                 <div
                   style={{
                     display: 'grid',
@@ -181,7 +188,7 @@ setfilterdata(filterlmsdata)
                     </span>
                   </div>
                 </div>
-          
+
                 {/* Buttons */}
                 <div style={{ display: 'flex', gap: '12px' }}>
                   <button
@@ -242,7 +249,7 @@ setfilterdata(filterlmsdata)
               </div>
             </div>
           ))}
-          
+
         </div>
       </div>
 

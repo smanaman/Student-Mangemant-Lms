@@ -2,6 +2,7 @@ import React, {  useState } from 'react'
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 function Login() {
     const nav = useNavigate()
     const [input, setinput] = useState({
@@ -32,8 +33,13 @@ function Login() {
 
         }
         else {
-            alert('Please enter the correct information');
-
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!plase check your username and password",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
+              
         }
 
     

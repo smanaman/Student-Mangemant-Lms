@@ -6,6 +6,8 @@ import { nanoid } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Nav from './Nav';
+import Swal from 'sweetalert2'
+
 function Add() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,8 +21,8 @@ function Add() {
     password: '',
   });
 
-  const { StudentLmsData } = useSelector((state) => state.StudentLmsData);
-  console.log(StudentLmsData);
+  // const { StudentLmsData } = useSelector((state) => state.StudentLmsData);
+  // console.log(StudentLmsData);
 
   useEffect(() => {
     dispatch(FeactData());
@@ -37,7 +39,14 @@ function Add() {
       email: '',
       password: '',
     });
+    Swal.fire({
+      title: "Add success!",
+      icon: "success",
+      draggable: true
+    });
     navigate('/view', {state : "Add"}); 
+
+     
   };
 
   const handleChange = (e) => {
@@ -50,14 +59,14 @@ function Add() {
     const checkLogin = async () => {
       try {
         const res = await axios.get('http://localhost:3000/login');
-    console.log(res.data);
+    // console.log(res.data);
     if (res.data.length === 0) {
       navigate('/login');
     } else {
       navigate('/add');
     }
       } catch (error) {
-        console.error('Error checking login:', error);
+        // console.error('Error checking login:', error);
         navigate('/login'); 
       }
     };

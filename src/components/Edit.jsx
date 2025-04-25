@@ -6,6 +6,8 @@ import { EditData } from '../feature/Creteslice';
 import { nanoid } from '@reduxjs/toolkit';
 import axios from 'axios';
 import Nav from './Nav';
+import Swal from 'sweetalert2'
+
 
 function Edit() {
   const location = useLocation();
@@ -42,6 +44,13 @@ function Edit() {
       password: '',
     });
     navigate('/view', {state : "Edit"});
+
+    Swal.fire({
+      title: "Edit success!",
+      icon: "success",
+      draggable: true
+    });
+    
   };
 
   const handleChange = (e) => {
@@ -57,7 +66,7 @@ function Edit() {
       const res = await axios.get('http://localhost:3000/login');
   console.log(res.data);
   if (res.data.length === 0) {
-    nav('/login');
+    navigate('/login');
   } else {
     navigate('/edit');
   }
@@ -100,6 +109,18 @@ function Edit() {
             name="name"
             placeholder="Your name"
             value={input.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="name">std</label>
+          <input
+            type="number"
+            id="std"
+            name="std"
+            placeholder="Your std"
+            value={input.std}
             onChange={handleChange}
             required
           />
