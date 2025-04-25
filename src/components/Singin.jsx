@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import './singin.css'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 function Singin() {
@@ -76,7 +76,7 @@ function Singin() {
                         <button type="submit" className="signup-btn">Sign Up</button>
                     </form>
                     <div className="footer">
-                        Already have an account? <a href="#">Login here</a>
+                        Already have an account?<a> <Link to={'/login'}>Login here</Link></a>
                     </div>
                 </div>
 

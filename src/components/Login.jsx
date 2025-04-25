@@ -69,7 +69,7 @@ function Login() {
                     </form>
                     <div className="footer">
                         <p>Don't have an account?
-                            <Link to="/singin">
+                            <Link to="/">
                                 Sign up
                             </Link>
                         </p>
